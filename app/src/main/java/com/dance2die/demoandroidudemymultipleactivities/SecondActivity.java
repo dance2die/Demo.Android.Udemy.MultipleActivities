@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -35,7 +36,10 @@ public class SecondActivity extends AppCompatActivity {
 
 
         Intent i = getIntent();
-        Log.i("Sent Data", i.getStringExtra("hello"));
+        Log.i("Sent Data", i.getStringExtra("name"));
+
+        TextView textView2 = (TextView) findViewById(R.id.textView2);
+        textView2.setText("Hello " + i.getStringExtra("name") + "!");
     }
 
 }
